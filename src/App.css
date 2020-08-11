@@ -1,0 +1,209 @@
+body{
+  background-color:#b3d9d9; 
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding: 30px;
+}
+form{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  text-align: center;
+}
+.container {
+  border-radius: 5px;;
+  padding: 100px;
+  background-color: #e6f2f2;
+  position: relative;
+  overflow:hidden;
+  width: 768px;
+  max-width: 100%;
+  min-height: 480px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.form-container{
+  align-items: center;
+  text-align:center;
+  position: absolute;
+  top:0;
+  height:100%;
+  transition: all 0.6s ease-in-out;
+}
+.social-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position:absolute;
+  right:0;
+  padding-right:40px;
+}
+.social-container.signup{
+  left:0;
+  margin-right:70%;
+}
+.login-container {
+  left:0;
+  width:50%;
+  z-index:2;
+}
+a{
+  padding-top: 25px;
+}
+
+.signup-container {
+  left:0;
+  width:50%;
+  opacity:0;
+  z-index:1;
+}
+.container.right-panel-active .login-container{
+  transform: translateX(100%);
+  opacity:0;
+}
+.container.right-panel-active .signup-container{
+  transform: translateX(100%);
+  opacity:1;
+  z-index: 5;
+  animation: show 0.6s;
+}
+
+@keyframes show {
+  0%,
+  49.99% {
+    opacity: 0;
+    z-index:1;
+  }
+  50%,
+  100%{
+    opacity:1;
+    z-index:5;
+  }
+}
+
+
+svg#blue{
+  -moz-transform: rotate(270deg) translate(-38%, -44.4%);
+  -webkit-transform: rotate(270deg) translate(-38%, -44.4%);
+  -o-transform: rotate(270deg) translate(-38%, -44.4%);
+  -ms-transform: rotate(270deg) translate(-38%, -44.4%);
+  transform: rotate(270deg) translate(-38%, -44.4%);
+  height:165px;
+  display:inline-block;
+}
+svg#blue-inv{
+  -moz-transform: rotate(90deg) translate(-38%, -44.4%);
+  -webkit-transform: rotate(900deg) translate(-38%, -44.4%);
+  -o-transform: rotate(90deg) translate(-38%, -44.4%);
+  -ms-transform: rotate(90deg) translate(-38%, -44.4%);
+  transform: rotate(90deg) translate(-5%, -37%);
+}
+
+.overlay-container {
+  position: absolute;
+  top: 0;
+  left:50%; 
+  width: 50%;
+  height: 100%;
+  overflow: hidden; 
+  transition: transform 0.7s ease-in-out;
+  z-index: 100;
+  text-align:center;
+  align-items:center;
+}
+
+.container.right-panel-active .overlay-container {
+  transform: translateX(-100%);
+}
+.overlay {
+  background: #ff416c;
+  background-size: cover;
+  background-position: 0 0;
+  color:  #e6f2f2;
+  position: relative;
+  left: -100%;
+  height: 100%;
+  width: 200%;
+  transform: translateX(0);
+  transition: transform 0.7s ease-in-out;
+}
+.container.right-panel-active .overlay {
+  transform: translateX(50%);
+}
+
+.overlay-panel {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 40px; 
+  text-align: center;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  transform: translateX(0);
+  transition: transform 0.7s ease-in-out;
+}
+
+.overlay-left {
+  transform: translateX(-20%);
+  width:30%;
+}
+
+.container.right-panel-active .overlay-left {
+  transform: translateX(0);
+}
+
+.overlay-right {
+  width:30%;
+  right: 0;
+  transform: translateX(0);
+}
+
+.container.right-panel-active .overlay-right {
+  transform: translateX(20%);
+}
+.label{
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+button{
+  font-size: 15px;
+  font-weight:bold;
+  text-align:center;
+  background:transparent;
+  border-radius: 10px;
+  padding:7px;
+  margin-top: 25px;
+  text-transform:uppercase;
+}
+button.panel{
+  color:#fff!important;
+}
+.form-control{
+  border-radius: 5px !important;
+}
+[placeholder]{
+  padding:5px;
+}
+input[type="password"]:focus,
+input[type="email"]:focus,
+input[type="name"]:focus {
+  border-radius: 5px !important;
+  border-color: #008080;
+  opacity: 50%;
+  outline: 0 none !important;
+}
+
+
+
+
+
