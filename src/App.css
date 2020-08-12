@@ -186,22 +186,18 @@ button{
   text-transform:uppercase;
 }
 button.panel{
-  color:#fff!important;
+  color:#fff;
 }
 .form-control{
-  border-radius: 5px !important;
+  border-radius: 5px ;
 }
 [placeholder]{
   padding:5px;
 }
-input[type="password"]:focus,
-input[type="email"]:focus,
-input[type="name"]:focus {
-  border-radius: 5px !important;
-  border-color: #008080;
-  opacity: 50%;
-  outline: 0 none !important;
+input:focus ~ .form-control-feedback {
+  z-index: 3;
 }
+
 
 
 
